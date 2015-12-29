@@ -1,9 +1,13 @@
 angular.module('login')
-	   .controller('login',['$scope','$location',login]);
+	   .controller('login',['$scope','$location','authService',login]);
 
-function login($scope,$location) {
+function login($scope,$location,authService) {
 
 	$scope.login = function() {
-		$location.path('/users');
+
+		authService.login($scope.username,$scope.password).then(function() {
+      $location.path('/users');
+    });
+    
 	};
 }
