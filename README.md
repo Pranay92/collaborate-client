@@ -3,8 +3,9 @@ Client for [collaborate](https://github.com/Pranay92/collaborate) server.
 
 ## Technology stack
 
-1. [Bootstrap-material](https://fezvrasta.github.io/bootstrap-material-design/)
-2. [AngularJS](angularjs.org)
+1. [Bootstrap-material](https://fezvrasta.github.io/bootstrap-material-design/) - for UI.
+2. [AngularJS](angularjs.org) - as a primary frameowork.
+3. [ReactJS](https://facebook.github.io/react/) - for quickly rendering dom elements.
 
 ## TODO
 
