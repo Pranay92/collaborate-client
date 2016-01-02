@@ -16,11 +16,6 @@
   
 </head>
 <body>
-  <ul class="menu">
-    
-  </ul>
-
-
   <div ng-view></div>
 
   <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -37,17 +32,17 @@
 
   <!-- Load services before modules -->
   <script src="app/common/services/services.index.js"></script>
-  <script src="app/common/services/services.user.js"></script>
+  <script src="app/common/services/services.home.js"></script>
   <script src="app/common/services/services.auth.js"></script>
   <script src="app/common/services/services.http.js"></script>
 
   <!-- Load directives before modules -->
   <script src="app/common/directives/directives.index.js"></script>
   
-  <!-- User module -->
-  <script src="app/user/user.index.js"></script>
-  <script src="app/user/user.controller.js"></script>
-  <script src="app/user/user.route.js"></script>
+  <!-- home module -->
+  <script src="app/home/home.index.js"></script>
+  <script src="app/home/home.controller.js"></script>
+  <script src="app/home/home.route.js"></script>
 
   <!-- Login module -->
   <script src="app/login/login.index.js"></script>

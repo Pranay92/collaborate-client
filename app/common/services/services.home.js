@@ -1,9 +1,9 @@
 angular.module('services')
-       .service('userService',[userService]);
+       .service('homeService',[homeService]);
 
 
 
-function userService() {
+function homeService() {
 
   var service = {};
   service.get = get;

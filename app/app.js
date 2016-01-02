@@ -3,7 +3,7 @@
 // Declare app level module which depends on views, and components
 angular.module('collaborate', [
   'ngRoute',
-  'user',
+  'home',
   'login'
 ]).
 config(['$routeProvider', function($routeProvider) {
