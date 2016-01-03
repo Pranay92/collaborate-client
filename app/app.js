@@ -5,7 +5,8 @@ angular.module('collaborate', [
   'ngRoute',
   'home',
   'login',
-  'services'
+  'services',
+  'directives'
 ]).
 config(['$routeProvider','$httpProvider', function($routeProvider, $httpProvider) {
   $httpProvider.interceptors.push('requestInterceptor');

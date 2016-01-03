@@ -3,9 +3,11 @@ angular.module('login')
 
 function login($scope,$location,authService,storageService,messages) {
 
+  $scope.credentials = {};
+
 	$scope.login = function() {
 
-		authService.login($scope.username,$scope.password).then(function(response) {
+		authService.login($scope.credentials.username,$scope.credentials.password).then(function(response) {
       storageService.store('token',response.data.token);
       storageService.store('id',response.data.id);
       $location.path('/home');
@@ -15,9 +17,15 @@ function login($scope,$location,authService,storageService,messages) {
 
 	};
 
+  $scope.reset = function() {
+    $scope.error = false;
+    $scope.errMsg = '';
+  };
+
   function handleError(error) {
     var errMsg = messages[error.status.toString()] || messages['default'];
     $scope.error = true;
     $scope.errMsg = errMsg.message;
   }
+
 }

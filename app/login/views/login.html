@@ -1,20 +1,20 @@
 <div class="col-md-12" style="margin-top:15%">
   <div class="col-md-6"></div>
   <div class="col-md-6">
-    <form class="form-horizontal">
+    <form class="form-horizontal" form-change="reset">
       <fieldset>
         <div class="form-group">
           <label for="inputEmail" class="col-md-2 control-label">Email</label>
 
           <div class="col-md-10">
-            <input type="email" class="form-control" id="inputEmail" ng-model="username" placeholder="Email">
+            <input type="email" class="form-control" id="inputEmail" ng-model="credentials.username" placeholder="Email">
           </div>
         </div>
         <div class="form-group">
           <label for="inputPassword" class="col-md-2 control-label">Password</label>
 
           <div class="col-md-10">
-            <input type="password" class="form-control" id="inputPassword" ng-model="password" placeholder="Password">
+            <input type="password" class="form-control" id="inputPassword" ng-model="credentials.password" placeholder="Password">
           </div>
         </div>
         <div class="form-group">
@@ -24,7 +24,7 @@
         </div>
       </fieldset>
     </form>
-    <div class="alert alert-danger" ng-if="error">
+    <div class="alert alert-danger" ng-show="error">
       <span ng-bind="errMsg"></span>
     </div>
   </div>
