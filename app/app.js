@@ -4,9 +4,11 @@
 angular.module('collaborate', [
   'ngRoute',
   'home',
-  'login'
+  'login',
+  'services'
 ]).
-config(['$routeProvider', function($routeProvider) {
+config(['$routeProvider','$httpProvider', function($routeProvider, $httpProvider) {
+  $httpProvider.interceptors.push('requestInterceptor');
   $routeProvider.otherwise({redirectTo: '/login'});
 }]);
 

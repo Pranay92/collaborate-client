@@ -1,23 +1,32 @@
 angular.module('services')
-       .factory('requestInterceptor',['$localStorage',requestInterceptor]);
+       .factory('requestInterceptor',['storageService',requestInterceptor]);
 
 
-function requestInterceptor($localStorage) {
+function requestInterceptor(storageService) {
+
+  var authToken;
 
   return {
 
-    'request' : function() {
+    'request' : function(config) {
+      
+      authToken = storageService.get('token');
+      
+      if(authToken) {
+        config.headers.Authorization = ['Bearer ',authToken].join('');
+      }
 
+      return config;
     },
 
     'requestError' : function() {
 
     },
 
-    'response' : function() {
-
+    'response' : function(response) {
+      return response;
     },
-    
+
     'responseError' : function() {
 
     }
