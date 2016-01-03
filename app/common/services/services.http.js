@@ -1,8 +1,8 @@
 angular.module('services')
-       .factory('requestInterceptor',['storageService',requestInterceptor]);
+       .factory('requestInterceptor',['storageService','$q',requestInterceptor]);
 
 
-function requestInterceptor(storageService) {
+function requestInterceptor(storageService,$q) {
 
   var authToken;
 
@@ -27,8 +27,8 @@ function requestInterceptor(storageService) {
       return response;
     },
 
-    'responseError' : function() {
-
+    'responseError' : function(error) {
+      return $q.reject(error);
     }
 
   };

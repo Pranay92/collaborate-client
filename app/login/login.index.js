@@ -1,1 +1,1 @@
-angular.module('login',['services']);
+angular.module('login',['services','providers']);

@@ -1,7 +1,7 @@
 angular.module('login')
-	   .controller('login',['$scope','$location','authService','storageService',login]);
+	   .controller('login',['$scope','$location','authService','storageService','messages',login]);
 
-function login($scope,$location,authService,storageService) {
+function login($scope,$location,authService,storageService,messages) {
 
 	$scope.login = function() {
 
@@ -9,7 +9,15 @@ function login($scope,$location,authService,storageService) {
       storageService.store('token',response.data.token);
       storageService.store('id',response.data.id);
       $location.path('/home');
+    },function(error) {
+      handleError(error);
     });
 
 	};
+
+  function handleError(error) {
+    var errMsg = messages[error.status.toString()] || messages['default'];
+    $scope.error = true;
+    $scope.errMsg = errMsg.message;
+  }
 }
