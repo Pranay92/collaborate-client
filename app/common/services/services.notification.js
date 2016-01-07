@@ -1,8 +1,8 @@
 angular.module('services')
-       .service('notificationService',['$rootScope',notificationService]);
+       .service('notificationService',['$rootScope','$timeout',notificationService]);
 
 
-function notificationService($rootScope) {
+function notificationService($rootScope,$timeout) {
 
   var service = {};
   service.error = error;

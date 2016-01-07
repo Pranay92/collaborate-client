@@ -1,7 +1,7 @@
 angular.module('services')
-     .service('authService',['config','$http','$location','$q',authService]);
+     .service('authService',['config','$http','$location','storageService',authService]);
 
-function authService(config,$http,$location,$q) {
+function authService(config,$http,$location,storageService) {
   
   var service = {};
   service.login = login;
@@ -26,11 +26,18 @@ function authService(config,$http,$location,$q) {
   }
 
   function logout() {
-    var deferred = $q.defer();
-    setTimeout(function(){
-      deferred.resolve();
-    },500);
-    return deferred.promise;
+    return $http(
+      {
+        'method' : 'POST',  
+        'url' : config.apiEndPoint + '/logout',
+        'data' : {
+          'token' : storageService.get('token')
+        },
+        'headers' : {
+          'Content-Type' : 'application/json'
+        } 
+      }
+    );
   }
 
   function postLogout() {
