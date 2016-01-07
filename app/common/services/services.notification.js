@@ -1,8 +1,8 @@
 angular.module('services')
-       .service('notificationService',[notificationService]);
+       .service('notificationService',['$rootScope',notificationService]);
 
 
-function notificationService() {
+function notificationService($rootScope) {
 
   var service = {};
   service.error = error;
@@ -13,7 +13,8 @@ function notificationService() {
 
   }
 
-  function success() {
-    
+  function success(msg) {
+    $rootScope.success = true;
+    $rootScope.successMsg = msg;
   }
 }

@@ -1,11 +1,12 @@
 angular.module('services')
-     .service('authService',['config','$http','$location',authService]);
+     .service('authService',['config','$http','$location','$q',authService]);
 
-function authService(config,$http,$location) {
+function authService(config,$http,$location,$q) {
   
   var service = {};
   service.login = login;
   service.logout = logout;
+  service.postLogout = postLogout;
   return service;
 
   function login(username,password) {
@@ -19,12 +20,20 @@ function authService(config,$http,$location) {
         },
         'headers' : {
           'Content-Type' : 'application/json'
-        }
+        } 
       }
     );
   }
 
   function logout() {
+    var deferred = $q.defer();
+    setTimeout(function(){
+      deferred.resolve();
+    },500);
+    return deferred.promise;
+  }
+
+  function postLogout() {
     $location.path('/login');
   }
 }

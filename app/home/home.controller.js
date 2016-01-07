@@ -1,11 +1,14 @@
 
 angular.module('home')
-      .controller('homeCtrl',['$scope','authService','user',HomeController])
+      .controller('homeCtrl',['$scope','authService','user','notificationService',HomeController])
 
-function HomeController($scope,authService,user) {
+function HomeController($scope,authService,user,notificationService) {
   
   $scope.logout = function() {
-    authService.logout();
+    authService.logout().then(function(){
+      authService.postLogout();
+      notificationService.success('Successfully logged out');
+    });
   };
 
 };
