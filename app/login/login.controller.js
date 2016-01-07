@@ -6,7 +6,6 @@ function login($scope,$location,authService,storageService,messages) {
   $scope.credentials = {};
 
 	$scope.login = function() {
-
 		authService.login($scope.credentials.username,$scope.credentials.password).then(function(response) {
       storageService.store('token',response.data.token);
       storageService.store('id',response.data.id);
@@ -14,7 +13,6 @@ function login($scope,$location,authService,storageService,messages) {
     },function(error) {
       handleError(error);
     });
-
 	};
 
   $scope.reset = function() {
