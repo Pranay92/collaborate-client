@@ -31,7 +31,20 @@
 
 .top {
   position : absolute;
-  top : 0px;
   left:0px;
   right:0px;
+  top:0px;
+  animation-duration: 0.5s;
+  animation-name: slidein;
+}
+
+
+@keyframes slidein {
+  from {
+    top : -60px;
+  }
+
+  to {
+    top : 0px;
+  }
 }
