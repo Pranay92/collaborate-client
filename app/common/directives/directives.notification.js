@@ -44,4 +44,38 @@ angular.module('directives')
 
     }
   }
+}])
+.directive('successMessageTop',['$timeout',function($timeout) {
+  return {
+    'restrict' : 'E',
+    'template' : '<div class="alert alert-success top"><span ng-bind="successMsg"></span></div>',
+    'link' : function($scope, $elem, $attrs) {
+
+      $elem.hide();
+
+      var valToWatch = $attrs.valToWatch,
+          timeoutSecs = $attrs.timeout || 3000;
+
+      timeoutSecs = parseInt(timeoutSecs);
+      $scope.$watch(valToWatch,function(newVal) {
+        
+        if(newVal){
+          $elem.show();
+          $scope.successMsg = $scope.$eval($attrs.displayMessage);
+          hide();
+          return;
+        }
+
+        $elem.hide();
+
+      });
+
+      function hide() {
+        $timeout(function(){
+          $elem.hide();
+        },timeoutSecs);
+      }
+
+    }
+  }
 }]);

@@ -9,13 +9,14 @@
   <title>My AngularJS App</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
+  <link rel="stylesheet" type="text/css" href="app/app.css">
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="bower_components/bootstrap-material-design/dist/css/material.min.css">
   <link rel="stylesheet" href="bower_components/bootstrap-material-design/dist/css/ripples.min.css">
   
 </head>
 <body>
+  <success-message-top val-to-watch="success" display-message="successMsg"></success-message-top>
   <div ng-view></div>
 
   <script src="bower_components/jquery/dist/jquery.js"></script>
