@@ -38,6 +38,21 @@
   animation-name: slidein;
 }
 
+.notification-error {
+  animation-duration:0.5s;
+  animation-name : fadein;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
 @keyframes slidein {
   from {
     top : -60px;

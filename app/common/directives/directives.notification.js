@@ -2,7 +2,7 @@ angular.module('directives')
 .directive('errorMessage',['$parse',function($parse) {
   return {
     'restrict' : 'E',
-    'template' : '<div class="alert alert-danger"><span ng-bind="errMsg"></span></div>',
+    'template' : '<div class="alert alert-danger notification-error"><span ng-bind="errMsg"></span></div>',
     'link' : function($scope, $elem, $attrs) {
 
       var valToWatch = $attrs.valToWatch;
