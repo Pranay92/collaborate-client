@@ -48,7 +48,7 @@ angular.module('directives')
 .directive('successMessageTop',['$timeout','$rootScope',function($timeout,$rootScope) {
   return {
     'restrict' : 'E',
-    'template' : '<div class="alert alert-success top"><span ng-bind="successMsg"></span></div>',
+    'template' : '<div class="alert alert-success notification-temp-top"><span ng-bind="successMsg"></span></div>',
     'link' : function($scope, $elem, $attrs) {
 
       $elem.hide();
