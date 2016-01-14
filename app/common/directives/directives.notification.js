@@ -48,10 +48,8 @@ angular.module('directives')
 .directive('successMessageTop',['$timeout','$rootScope',function($timeout,$rootScope) {
   return {
     'restrict' : 'E',
-    'template' : '<div class="alert alert-success notification-temp-top"><span ng-bind="successMsg"></span></div>',
+    'template' : '<div ng-show="showElem" class="alert alert-success notification-temp-top"><span ng-bind="successMsg"></span></div>',
     'link' : function($scope, $elem, $attrs) {
-
-      $elem.hide();
 
       var valToWatch = $attrs.valToWatch,
           timeoutSecs = $attrs.timeout || 3000;
@@ -60,13 +58,11 @@ angular.module('directives')
       $rootScope.$watch(valToWatch,function(newVal) {
         
         if(newVal){
-          $elem.show();
+          $scope.showElem = true;
           $rootScope.successMsg = $rootScope.$eval($attrs.displayMessage);
           reset();
           return;
         }
-
-        $elem.hide();
 
       });
 
@@ -74,6 +70,7 @@ angular.module('directives')
         $timeout(function(){
           $rootScope.successMsg = '';
           $rootScope[valToWatch] = false;
+          $scope.showElem = false;
         },timeoutSecs);
       }
 

@@ -38,6 +38,11 @@
   animation-name: slidein;
 }
 
+.notification-temp-top.ng-hide {
+  animation-duration: 0.5s;
+  animation-name: slideout;
+}
+
 .notification-error {
   animation-duration:0.5s;
   animation-name : fadein;
@@ -60,5 +65,15 @@
 
   to {
     top : 0px;
+  }
+}
+
+@keyframes slideout {
+  from {
+    top : 0px;
+  }
+
+  to {
+    top : -60px;
   }
 }
