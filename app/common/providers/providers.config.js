@@ -3,9 +3,11 @@ angular.module('providers')
 
 function configProvider() {
 
+  var config = window.__config || {};
+
   this.$get = function() {
     return {
-      apiEndPoint : 'http://localhost:3000'
+      apiEndPoint : config.apiEndPoint
     };    
   };
 
