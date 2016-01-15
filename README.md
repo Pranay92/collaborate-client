@@ -1,4 +1,4 @@
-## lets-chat-client
+## collaborate-client
 
 Client for [collaborate](https://github.com/Pranay92/collaborate) server.
 
