@@ -16,7 +16,7 @@ function login($scope,$location,authService,storageService,messages) {
       handleError(error);
     }).finally(function(){
       $scope.buttonMsg = 'Submit';
-    })
+    });
 	};
 
   $scope.reset = function() {
