@@ -11,4 +11,31 @@ angular.module('directives')
       });
     }
   }
-}]);
+}])
+.directive('buttonText',[function() {
+  return {
+    'restrict' : 'A',
+    'link' : function($scope,$elem,$attrs) {
+      
+      var btnText = $attrs.buttonText,
+          btnDefaultText = $attrs.buttonDefaultText|| 'Submit',
+          btnDisableText = $attrs.buttonDisableText || '__undefined';
+
+      if(!$scope[btnText]){
+        $elem.text(btnDefaultText);
+        return;
+      }
+
+      $scope.$watch(btnText,function(newVal){
+        
+        if(newVal == btnDisableText){
+          $elem.attr('disabled',true);
+          return;
+        }
+
+        $elem.removeAttr('disabled');
+
+      });
+    }
+  }
+}])
