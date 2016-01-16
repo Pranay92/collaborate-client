@@ -6,8 +6,11 @@ angular.module('home')
     templateUrl: 'app/home/views/home.html',
     controller: 'homeCtrl',
     resolve : {
-      'user' : function($http,config,storageService) {
-        return $http.get(config.apiEndPoint + '/users/' + storageService.get('id'));
+      'user' : function(userService,storageService) {
+        return userService.one(storageService.get('id'));
+      },
+      'users' : function(userService,storageService) {
+        return userService.get(storageService.get('id'));
       }
     }
 

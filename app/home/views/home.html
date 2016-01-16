@@ -1,5 +1,6 @@
 <div class="navbar navbar-default">
   <div class="container-fluid">
+    
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
         <span class="icon-bar"></span>
@@ -8,6 +9,7 @@
       </button>
       <a class="navbar-brand" href="javascript:void(0)">Collaborate</a>
     </div>
+    
     <div class="navbar-collapse collapse navbar-responsive-collapse">
       </form>
       <ul class="nav navbar-nav navbar-right">
@@ -20,5 +22,16 @@
         </li>
       </ul>
     </div>
+
   </div>
+</div>
+<div class="container-fluid main side-nav">
+  <nav class="menu">
+    <ul>
+      <li class="withripple" ng-repeat="user in users">
+        {{user.name.first}}
+        <div class="ripple-container"></div>
+      </li>
+    </ul>
+  </nav>
 </div>
