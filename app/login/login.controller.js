@@ -14,9 +14,7 @@ function login($scope,$location,authService,storageService,messages) {
       $location.path('/home');
     },function(error) {
       handleError(error);
-    }).finally(function(){
-      $scope.buttonMsg = 'Submit';
-    });
+    })
 	};
 
   $scope.reset = function() {
@@ -28,6 +26,7 @@ function login($scope,$location,authService,storageService,messages) {
     var errMsg = messages[error.status.toString()] || messages['default'];
     $scope.error = true;
     $scope.errMsg = errMsg.message;
+    $scope.buttonMsg = 'Submit';
   }
 
 }
