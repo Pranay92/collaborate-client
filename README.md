@@ -26,3 +26,5 @@ this will deploy the directory along with index.html as a default at ````localho
 #### TODO
 
 ~~1. Move config to .gitignore so that can be used as per requirements.~~
+2. Add socket connection with the chat server on login.
+~~3. Update UI to be more pleasing and remove material design.~~
