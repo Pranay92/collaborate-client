@@ -1,7 +1,7 @@
 angular.module('login')
-	   .controller('login',['$scope','$location','authService','storageService','messages',login]);
+	   .controller('login',['$scope','$state','authService','storageService','messages',login]);
 
-function login($scope,$location,authService,storageService,messages) {
+function login($scope,$state,authService,storageService,messages) {
 
   $scope.credentials = {};
   $scope.buttonMsg = 'Submit';
@@ -11,7 +11,7 @@ function login($scope,$location,authService,storageService,messages) {
 		authService.login($scope.credentials.username,$scope.credentials.password).then(function(response) {
       storageService.store('token',response.data.token);
       storageService.store('id',response.data.id);
-      $location.path('/home');
+      $state.transitionTo('home');
     },function(error) {
       handleError(error);
     })

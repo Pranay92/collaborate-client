@@ -1,7 +1,7 @@
 angular.module('services')
-     .service('authService',['config','$http','$location','storageService','notificationService',authService]);
+     .service('authService',['config','$http','$state','storageService','notificationService',authService]);
 
-function authService(config,$http,$location,storageService,notificationService) {
+function authService(config,$http,$state,storageService,notificationService) {
   
   var service = {};
   service.login = login;
@@ -41,7 +41,7 @@ function authService(config,$http,$location,storageService,notificationService) 
   }
 
   function postLogout() {
-    $location.path('/login');
+    $state.transitionTo('login');
     notificationService.success('Successfully logged out');
   }
 }

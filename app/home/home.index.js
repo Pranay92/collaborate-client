@@ -1,1 +1,1 @@
-angular.module('home',['services','ngRoute']);
+angular.module('home',['services']);

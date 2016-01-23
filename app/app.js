@@ -2,14 +2,14 @@
 
 // Declare app level module which depends on views, and components
 angular.module('collaborate', [
-  'ngRoute',
+  'ui.router',
   'ngAnimate',
   'home',
   'login',
   'services',
   'directives'
 ]).
-config(['$routeProvider','$httpProvider', function($routeProvider, $httpProvider) {
+config(['$urlRouterProvider','$httpProvider', function($urlRouterProvider, $httpProvider) {
   $httpProvider.interceptors.push('requestInterceptor');
-  $routeProvider.otherwise({redirectTo: '/login'});
+  $urlRouterProvider.otherwise('/login');
 }]);
