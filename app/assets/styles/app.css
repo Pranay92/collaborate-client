@@ -7,6 +7,10 @@
   border-right:2px solid #ccc;
 }
 
+.anchor {
+  cursor: pointer;
+}
+
 .menu > li {
   display: inline;
 }
@@ -73,6 +77,20 @@
     box-sizing: border-box;
 }
 
+.side-bar {
+  top:73px;
+  bottom:0px;
+  position:fixed;
+  background-color:#222222;
+  padding-right: 0px;
+}
+
+.side-bar a, .side-bar a:hover {
+  background-color:#222222;
+  border: #222222;
+  color: #ffffff;
+  padding-right: 0px;
+}
 .header-panel {
     background-color: #009587;
     height: 144px;
