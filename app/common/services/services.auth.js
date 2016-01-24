@@ -41,6 +41,7 @@ function authService(config,$http,$state,storageService,notificationService) {
   }
 
   function postLogout() {
+    storageService.clear();
     $state.transitionTo('login');
     notificationService.success('Successfully logged out');
   }
