@@ -16,6 +16,9 @@ angular.module('home')
             return userService.get(storageService.get('id'));
           }
         }
+      },
+      'profile@home' : {
+        templateUrl : 'app/home/views/profile.html'
       }      
     }
   });

@@ -4,6 +4,7 @@
 angular.module('collaborate', [
   'ui.router',
   'ngAnimate',
+  'ui.bootstrap',
   'home',
   'login',
   'services',
