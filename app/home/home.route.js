@@ -21,14 +21,6 @@ angular.module('home')
         templateUrl : 'app/home/views/profile.html'
       }     
     }
-  })
-  .state('home.messages',{
-    'url' : '/{id}/messages',
-    'views' : {
-      'messages@home' : {
-        templateUrl : 'app/home/views/messages.html'
-      }
-    }
   });
 
 }]);

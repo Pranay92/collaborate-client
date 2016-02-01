@@ -1,1 +1,1 @@
-angular.module('home',['services']);
+angular.module('home',['services','messages']);
