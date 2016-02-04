@@ -1,8 +1,8 @@
 
 angular.module('messages')
-      .controller('messageCtrl',['$scope',MessageController])
+      .controller('messageCtrl',['$scope','messages',MessageController])
 
-function MessageController($scope) {
+function MessageController($scope,messages) {
 
-  $scope.messages = ['one','two','three'];
+  $scope.messages = messages;
 };
