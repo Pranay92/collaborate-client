@@ -6,7 +6,7 @@ Client for [collaborate](https://github.com/Pranay92/collaborate) server.
 
 1. Make sure you have **bower** installed.
 2. From the root execute ````bower install```` for dependencies installation. Prefix a ````sudo```` if you get permission errors.
-3. Add **config.js** in the root of the directory. [Instructions](https://github.com/Pranay92/collaborate-client/wiki/Config)
+3. Create file **config.js** in the root of the directory for config variables. [Instructions](https://github.com/Pranay92/collaborate-client/wiki/Config)
 
 #### Deploying
 
