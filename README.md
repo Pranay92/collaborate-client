@@ -19,7 +19,7 @@ this will deploy the directory along with index.html as a default at ````localho
 #### Technology stack
 
 1. [Bootstrap-material](https://fezvrasta.github.io/bootstrap-material-design/) - for UI.
-2. [AngularJS](angularjs.org) - as a primary frameowork.
+2. [AngularJS](angularjs.org) - as a primary framework.
 3. [ReactJS](https://facebook.github.io/react/) - for quickly rendering dom elements.
 
 
