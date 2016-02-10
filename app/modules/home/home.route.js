@@ -6,7 +6,7 @@ angular.module('home')
     'url' : '/home',
     'views' : {
       '@' : {
-        templateUrl: 'app/home/views/home.html',
+        templateUrl: 'app/modules/home/views/home.html',
         controller: 'homeCtrl',
         resolve : {
           'user' : function(userService,storageService) {
@@ -18,7 +18,7 @@ angular.module('home')
         }
       },
       'profile@home' : {
-        templateUrl : 'app/home/views/profile.html'
+        templateUrl : 'app/modules/home/views/profile.html'
       }     
     }
   });

@@ -5,7 +5,7 @@ angular.module('login')
       'url' : '/login',
       'views' : {
         '@' : {
-          templateUrl : 'app/login/views/login.html',
+          templateUrl : 'app/modules/login/views/login.html',
           controller : 'login'          
         }
       }

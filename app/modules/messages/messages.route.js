@@ -6,7 +6,7 @@ angular.module('messages')
     'url' : '/{id}/messages',
     'views' : {
       'messages@home' : {
-        templateUrl : 'app/messages/views/messages.html',
+        templateUrl : 'app/modules/messages/views/messages.html',
         controller : 'messageCtrl',
         resolve : {
           'messages' :function(msgService,$stateParams) {
