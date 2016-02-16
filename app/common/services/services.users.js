@@ -8,6 +8,7 @@ function userService($q,config,storageService,$http) {
   var service = {};
   service.get = get;
   service.one = one;
+  service.update = update;
   return service;
 
   function one(userId) {
@@ -34,6 +35,21 @@ function userService($q,config,storageService,$http) {
     },function(){
       deferred.resolve({});
     });
+
+    return deferred.promise;
+  }
+
+  function update(user) {
+
+    var deferred = $q.defer(),
+        query = config.apiEndPoint + '/users/' + user._id;
+
+    $http.put(query,user).then(function(data){
+      deferred.resolve(data);
+    },function(err){
+      deferred.reject(err)
+    });
+
     return deferred.promise;
   }
 
