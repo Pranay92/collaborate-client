@@ -9,6 +9,7 @@ function cacheService() {
       cache = {};
 
   service.get = get;
+  service.set = set;
   return service;
 
   function get(key) {
