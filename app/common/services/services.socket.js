@@ -1,18 +1,33 @@
 angular.module('services')
-       .factory('socket',socketFactory);
+       .factory('socket',['config',socketFactory]);
 
-function socketFactory() { 
+function socketFactory(config) { 
 
-  var service = {};
-  service.connect = connect;
-  service.disconnect = disconnect;
+  var service = {},
+      connected = false;
+  service.connect = Connect;
+  service.disconnect = Disconnect;
+  service.isconnected = IsConnected;
+  service.initialize = Initialize;
   return service;
 
-  function connect(){
+  function Connect(){
+    io.connect(config.socketEndPoint);
+    connected = true;
+  };
+
+  function Disconnect() {
 
   };
 
-  function disconnect() {
+  function IsConnected() {
+    return connected;
+  };
 
+  function Initialize() {
+    if(IsConnected()) {
+      return;
+    }
+    Connect();
   };
 }

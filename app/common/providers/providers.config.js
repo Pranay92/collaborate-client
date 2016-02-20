@@ -7,7 +7,8 @@ function configProvider() {
 
   this.$get = function() {
     return {
-      apiEndPoint : config.apiEndPoint
+      apiEndPoint : config.apiEndPoint,
+      socketEndPoint : config.socketEndPoint
     };    
   };
 
