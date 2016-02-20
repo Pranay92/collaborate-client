@@ -2,3 +2,4 @@ npm-debug.log
 *.rdb
 bower_components
 config.js
+node_modules
