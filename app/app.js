@@ -13,5 +13,4 @@ angular.module('collaborate', [
 config(['$urlRouterProvider','$httpProvider', function($urlRouterProvider, $httpProvider) {
   $httpProvider.interceptors.push('requestInterceptor');
   $urlRouterProvider.otherwise('/login');
-  io.connect(window.__config.socketEndPoint);
 }]);
