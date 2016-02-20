@@ -13,6 +13,7 @@
     "jQuery": "*",
     "bootstrap-material-design": "0.3.0",
     "angular-animate": "1.4.8",
-    "angular-ui-router": "0.2.15"
+    "angular-ui-router": "0.2.15",
+    "socket.io-client": "~1.4.5"
   }
 }

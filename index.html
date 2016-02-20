@@ -18,12 +18,16 @@
   <success-message-top val-to-watch="success" display-message="successMsg"></success-message-top>
   <div ui-view></div>
 
+  <!-- this needs to be created locally and will be included in .gitignore -->
+  <script src="config.js"></script>
+
+  <!-- library files -->
   <script src="bower_components/jquery/dist/jquery.js"></script>
   <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-animate/bower-angular-animate-1.4.8/angular-animate.js"></script>
   <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="bower_components/socket.io-client/socket.io.js"></script>
   <script src="app/assets/js/ui-bootstrap.js"></script>
 
   <!-- Load providers before services -->
@@ -65,9 +69,6 @@
   
   <!-- Main module -->
   <script src="app/app.js"></script>
-
-  <!-- this needs to be created locally -->
-  <script src="config.js"></script>
 
 </body>
 </html>
