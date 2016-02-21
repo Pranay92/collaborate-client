@@ -8,7 +8,7 @@ function MessageController($scope,messages,socket,$stateParams) {
   $scope.msg = '';
 
   $scope.sendMsg = function() {
-    socket.sendMsg({msg : $scope.msg, to : $stateParams.id});
+    socket.sendMsg({content : $scope.msg, to : $stateParams.id});
   };
 
 };

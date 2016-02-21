@@ -1,12 +1,12 @@
 angular.module('services')
-       .factory('socket',['config','storageService',socketFactory]);
+       .factory('socket',['config','storageService','$rootScope',socketFactory]);
 
-function socketFactory(config,storageService) { 
+function socketFactory(config,storageService,$rootScope) { 
 
   var service = {},
       connected = false,
       connection,
-      user = storageService.get('id');
+      userId = storageService.get('id');
   service.connect = Connect;
   service.disconnect = Disconnect;
   service.isconnected = IsConnected;
@@ -25,7 +25,8 @@ function socketFactory(config,storageService) {
   };
 
   function AttachListener() {
-    connection.on(user + '-msg',function(data){
+    connection.on(userId + '-msg',function(data){
+      $rootScope.$broadcast(data.from);
       console.log(data);
     });
   };
@@ -42,6 +43,8 @@ function socketFactory(config,storageService) {
   };
 
   function SendMsg(config) {
-    connection.emit('message',{from : user, to : config.to, msg : config.msg});
-  }
+    config.from = userId;
+    config.created = new Date().getTime();
+    connection.emit('message',config);
+  };
 }
