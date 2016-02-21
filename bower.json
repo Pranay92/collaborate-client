@@ -6,14 +6,16 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "angular": "1.4.0",
+    "angular": "1.4.6",
     "angular-loader": "1.4.0",
     "angular-mocks": "1.4.0",
     "bootstrap": "3.0.0",
     "jQuery": "*",
     "bootstrap-material-design": "0.3.0",
-    "angular-animate": "1.4.8",
-    "angular-ui-router": "0.2.15",
-    "socket.io-client": "~1.4.5"
+    "angular-animate": "1.4.6",
+    "angular-ui-router": "0.2.15"
+  },
+  "resolutions": {
+    "angular": "1.4.6"
   }
 }
