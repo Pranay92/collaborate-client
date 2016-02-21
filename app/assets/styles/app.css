@@ -9,6 +9,8 @@
 
 .anchor {
   cursor: pointer;
+  display: inline-flex;
+  width: 100%;
 }
 
 .menu > li {
@@ -360,4 +362,18 @@
   position: fixed;
   bottom:0px;
   left:0px;
+}
+
+.led-green {
+  margin-top:5px;
+  margin-right: 5%;
+  width: 7%;
+  height: 12px;
+  background-color: #690;
+  border-radius: 50%;
+  box-shadow: #000 0 -1px 7px 1px, inset #460 0 -1px 9px, #7D0 0 2px 12px;
+}
+
+.list-user {
+  width : 93%;
 }
