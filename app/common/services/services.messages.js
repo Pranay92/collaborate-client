@@ -8,6 +8,7 @@ function msgService($q,config,storageService,$http) {
   var service = {};
   service.get = get;
   service.one = one;
+  service.send = send;
   return service;
 
   function one(msgId) {
@@ -41,6 +42,10 @@ function msgService($q,config,storageService,$http) {
       deferred.resolve({});
     });
     return deferred.promise;
+  }
+
+  function send() {
+
   }
 
 

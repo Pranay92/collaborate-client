@@ -5,11 +5,13 @@ function socketFactory(config,storageService) {
 
   var service = {},
       connected = false,
-      connection;
+      connection,
+      user = storageService.get('id');
   service.connect = Connect;
   service.disconnect = Disconnect;
   service.isconnected = IsConnected;
   service.initialize = Initialize;
+  service.sendMsg = SendMsg;
   return service;
 
   function Connect(){
@@ -23,11 +25,10 @@ function socketFactory(config,storageService) {
   };
 
   function AttachListener() {
-    var user = storageService.get('id');
     connection.on(user + '-msg',function(data){
-      // handle showing notifications here
+      console.log(data);
     });
-  }
+  };
 
   function IsConnected() {
     return connected;
@@ -39,4 +40,8 @@ function socketFactory(config,storageService) {
     }
     Connect();
   };
+
+  function SendMsg(config) {
+    connection.emit('message',{from : user, to : config.to, msg : config.msg});
+  }
 }
